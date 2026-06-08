@@ -322,4 +322,7 @@ for i in range(10):
 
 - `//` performs integer division.
 
-- Floating-point numbers are approximations and may introduce small errors.
+- Floating-point numbers are approximations
+ and may introduce small errors.
+- `abs()` absolute value, turns a number into its positive version.
+`abs(-5)` outputs `5`
