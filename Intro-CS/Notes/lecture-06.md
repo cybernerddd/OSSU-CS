@@ -244,6 +244,32 @@ That's abstraction.
 
 ---
 
+## FINGER EXERCISE
+> Assume you are given an integer   . Write a piece of Python code that uses bisection search to guess N. The code prints two lines: count: with how many guesses it took to find N, and answer: with the value of N. Hints: If the halfway value is exactly in between two integers, choose the smaller one.
+
+**ANSWER:**
+```py
+N = 543 #assume N is 543
+epsilon = 1
+low = 0
+high = 1000
+count = 0
+
+guess = (low + high)//2
+
+while guess != N:
+    guess = (low + high)//2 # set midpoint
+    print(guess)
+    count += 1
+    if guess > N:
+        high = guess
+    else:
+        low = guess
+    
+print(f"counted: {count}")
+print(guess)
+```
+
 ## Key Takeaways
 
 - Bisection Search repeatedly cuts the search space in half.
