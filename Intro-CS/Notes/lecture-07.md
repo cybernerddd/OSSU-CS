@@ -315,7 +315,7 @@ MIT's debugging strategy:
 ---
 ## FINGER EXERCISES
 **Question 1: Implement the function that meets the specifications below:**
-```
+```python
 def eval_quadratic(a, b, c, x):
     """
     a, b, c: numerical values for the coefficients of a quadratic equation
@@ -339,7 +339,7 @@ def eval_quadratic(a, b, c, x):
 # print(eval_quadratic(1, 1, 1, 1)) # prints 3
 ```
 **Question 2: Implement the function that meets the specifications below:**
-```
+```python
 def two_quadratics(a1, b1, c1, x1, a2, b2, c2, x2):
     """
     a1, b1, c1: one set of coefficients of a quadratic equation
@@ -359,10 +359,6 @@ def two_quadratics(a1, b1, c1, x1, a2, b2, c2, x2):
 two_quadratics(1, 1, 1, 1, 1, 1, 1, 1) # prints 6
 print(two_quadratics(1, 1, 1, 1, 1, 1, 1, 1)) # prints 6 then None
 ```
-
-
-# Examples:    
-print(eval_quadratic(1, 1, 1, 1)) # prints 3
 
 
 ## Memorable Lesson
