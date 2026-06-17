@@ -460,6 +460,33 @@ The biggest lesson today was understanding the difference between tuples and lis
 
 ```
 
-Tuples cannot be changed after creation.
+Tuples cannot be changed after creation(immutable).
+
+## FINGER EXERCISES
+**Question 1: Implement the function that meets the specifications below:**
+```python
+def dot_product(tA, tB):
+    """
+    tA: a tuple of numbers
+    tB: a tuple of numbers of the same length as tA
+    Assumes tA and tB are the same length.
+    Returns a tuple where the:
+    * first element is the length of one of the tuples
+    * second element is the sum of the pairwise products of tA and tB
+    """
+    # Your code here
+
+    char_count= len(tA)
+    total = 0
+    for i in range(len(tA)):
+        total += tA[i] * tB[i]
+    return (char_count, total)
+
+
+# Examples:
+tA = (1, 2, 3)
+tB = (4, 5, 6)   
+print(dot_product(tA, tB)) # prints (3,32)
+```
 
 Lists can be modified, making them useful when data needs to change during program execution.
