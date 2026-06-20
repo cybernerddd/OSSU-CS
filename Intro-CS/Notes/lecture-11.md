@@ -13,7 +13,7 @@ The biggest lesson was understanding the difference between:
 
 ---
 
-## Lists in Memory
+## Lists in Memory 
 
 A list is an object stored somewhere in memory.
 
