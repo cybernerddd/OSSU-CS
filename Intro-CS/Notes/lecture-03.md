@@ -1,4 +1,4 @@
-# OSSU / MIT 6.100L - Lecture 3: Iteration
+# OSSU / MIT 6.100L - Lecture 3: Iterations
 
 Iteration = repeating code.
 
