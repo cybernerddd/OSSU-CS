@@ -1,4 +1,4 @@
-# OSSU / MIT 6.100L - Lecture 4: Guess-and-Check Algorithms
+# OSSU / MIT 6.100L - Lecture 4: Guess-and-Check Algorithms.
 
 A guess-and-check algorithm systematically tries possible solutions until it finds one that works.
 
