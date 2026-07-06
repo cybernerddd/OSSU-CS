@@ -1,4 +1,4 @@
-# OSSU CS - Day 8: Functions as Objects
+# OSSU CS - Day 8: Functions as Objects.
 
 ---
 
