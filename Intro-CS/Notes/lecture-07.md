@@ -1,6 +1,6 @@
 # OSSU CS - Day 08
 
-## MIT 6.100L Lecture 7: Decomposition, Abstraction, and Functions
+## MIT 6.100L Lecture 7: Decomposition, Abstraction, and Functions.
 
 ## Core Ideas
 
