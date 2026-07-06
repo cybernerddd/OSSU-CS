@@ -1,5 +1,5 @@
 # OSSU CS — Day 05 Notes
-## MIT 6.100L Lecture 5: Floating Point Numbers & Approximation
+## MIT 6.100L Lecture 5: Floating Point Numbers & Approximations
 
 ## Big Idea
 
