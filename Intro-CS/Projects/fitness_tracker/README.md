@@ -3,7 +3,7 @@
 A simple object-oriented fitness tracker built while following **MIT 6.100L: Introduction to Computer Science and Programming Using Python**.
 This project was recreated from scratch to reinforce Object-Oriented Programming concepts rather than copying the lecture code.
 
----
+--- 
 
 ## Concepts Practiced
 
