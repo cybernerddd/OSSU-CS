@@ -1,0 +1,41 @@
+Bank Account System
+
+Version 1.0 ✅
+☑ Account
+☑ SavingsAccount
+☑ CheckingAccount
+☑ Deposit
+☑ Withdraw
+☑ Interest
+☑ Overdraft
+☑ __str__
+☑ __eq__
+☑ Transaction History
+☑ Step 16
+
+Version 1.1
+☐ Transaction timestamps
+☐ Transaction IDs
+☐ Better history formatting
+
+Version 1.2
+☐ Freeze account
+☐ Close account
+☐ Reopen account
+
+Version 1.3
+☐ Daily withdrawal limits
+☐ Monthly statements
+☐ Balance reports
+
+Version 2.0
+☐ Bank class
+☐ Multiple customers
+☐ Search accounts
+☐ Transfer between customers
+☐ Total bank assets
+
+Version 3.0
+☐ Save accounts to JSON
+☐ Load accounts
+☐ Simple command-line interface
