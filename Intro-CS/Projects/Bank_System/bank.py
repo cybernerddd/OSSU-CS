@@ -1,5 +1,14 @@
+from helper import (
+    current_time,
+    current_date
+)
+
 class Account(object):
     """A banking Account System"""
+    
+    # class variable to assign acc number
+    next_account_number = 1
+
     def __init__(self, account_holder, balance=0.0):
         """
         Input: account holder name and initial balance
@@ -7,24 +16,35 @@ class Account(object):
         holds have account type, status and the account
         number info...
         """
+        self.account_number = "BASE-"+str(Account.next_account_number).zfill(10)
+        Account.next_account_number += 1
         self.holder = account_holder
-        self.account_number = "0000000001"
+
 
         self.balance = balance
-        self.type = "Account"
+        self.type = "Base Account"
         self.status = "Active" # Active / Frozen
         self.transactions = []
+        # record date of account creation
+        self.account_open = current_date()
+
 
         # Record initial balance if provided
         if balance > 0:
             self.transactions.append({
                 "type": "initial deposit",
-                "amount": balance
+                "amount": balance,
+                "time": current_time()
             })
+
     
     def get_holder(self):
         """returns the account holder name"""
         return self.holder
+
+    def open_date(self):
+        """return when the account was opened"""
+        return self.account_open
     
     def get_account_number(self):
         """returns the account number"""
@@ -46,9 +66,29 @@ class Account(object):
         """updates the account holder to 'new'"""
         self.holder = new
 
-    def set_status(self, other):
-        """update the account status to other"""
-        self.status = other # will update so it switches between active/Frozen
+    # add account freezing and activation methods
+
+    def freeze_account(self):
+        """Freezes your account."""
+        self.status = "Frozen"
+        print(f"Your account {self.account_number} has been frozen successfully.")
+    
+    def activate_account(self):
+        """activates your account status to Active"""
+        # check if acc is already active
+        if self.status == "Active":
+            print(f"The account {self.account_number} is already active!")
+        else:
+            # means account is frozen so we actv
+            self.status = "Active"
+            print(f"Your account {self.account_number} has been activated successfully.")
+
+    ## Global account freezing error
+    def _ensure_active(self):
+        if self.get_status() == "Frozen":
+            raise ValueError(
+                "Account is Frozen! Operation could not be carried."
+            )
 
     ##########################################################################
     ##########################################################################
@@ -58,6 +98,10 @@ class Account(object):
     def deposit(self, amount):
         """add money to your account,
         record transaction if successful."""
+        
+        # deny if account it frozen
+        self._ensure_active()
+        
         if (amount <= 0):
             raise ValueError("You can't deposit that amount.")
         
@@ -67,7 +111,8 @@ class Account(object):
         self.transactions.append({
             "type": "transfer_in",
             "amount": amount,
-            "Available balance": self.get_balance()
+            "Available balance": self.get_balance(),
+            "time": current_time()
         })
         print(f"Deposit successful! You have deposited ${amount}.")
         
@@ -77,6 +122,9 @@ class Account(object):
         record the transaction after successful
         raise error o.w.."""
 
+        # deny if account it frozen
+        self._ensure_active()
+        
         if (amount <= 0) or (amount > self.balance):
             raise ValueError("Failed! Please check your current balance.")
         
@@ -86,15 +134,23 @@ class Account(object):
             self.transactions.append({
                 "type": "transfer_out",
                 "amount": amount,
-                "Available balance": self.get_balance()
+                "Available balance": self.get_balance(),
+                "time": current_time()
             })
         
     def transfer(self, other_account, amount):
-        """transfer amount to other account."""       
-        # check if user has the amount in current balance first.      
-         
+        """transfer amount to other account."""            
+        # deny if account it frozen
+        self._ensure_active()
+
+        # deny if receiver's account is frozen either
+        if other_account.status == "Frozen":
+            raise ValueError("Receiver's account is Frozen! Operation could not be carried.")
+        
         if amount <= 0:
             raise ValueError("Transfer amount must be positive.")
+        
+        # check if user has the amount in current balance first.      
         if amount > self.balance:
             raise ValueError("Insufficient funds for transfer.")
         
@@ -103,7 +159,8 @@ class Account(object):
         self.transactions.append({
         "type": "transfer_out",
         "amount": amount,
-        "to": other_account.get_account_number()
+        "to": other_account.get_account_number(),
+        "time": current_time()
         })
 
         # Deposit into receiver
@@ -111,7 +168,9 @@ class Account(object):
         other_account.transactions.append({
             "type": "transfer_in",
             "amount": amount,
-            "from": self.get_account_number()
+            "from": self.get_account_number(),
+            # add timestamp to transaction records.
+            "time": current_time()
         })
         print(f"Transfer successful! Sent ${amount} to {other_account.get_holder()}.")
 
@@ -153,6 +212,9 @@ class SavingsAccount(Account):
         # rewrite accoint type
         self.type = "Savings account"
         
+        # rewrite the account number format
+        self.account_number = "SAV-"+str(Account.next_account_number).zfill(10)
+        
 
         # check if user supplies interest rate
         # if interest_rate != 0.05:
@@ -160,7 +222,10 @@ class SavingsAccount(Account):
 
     def add_interest(self):
         """Apply interest to the savings account balance."""
-        # calculate interest amount
+
+        # deny if account it frozen      
+        self._ensure_active()
+        
         interest_amount = self.balance * (self.interest_rate / 100)
 
         # add interest to balance
@@ -170,7 +235,8 @@ class SavingsAccount(Account):
         self.transactions.append({
             "type": "interest",
             "amount": interest_amount,
-            "Available balance": self.get_balance()
+            "Available balance": self.get_balance(),
+            "time": current_time()
         })
 
         print(f"Interest of GH₵{interest_amount:.2f} added. New balance: GH₵{self.balance:.2f}")
@@ -189,6 +255,9 @@ class SavingsAccount(Account):
            Declines when you've passed daily
            limit for withdrawals."""
 
+        # deny if account it frozen
+        self._ensure_active()
+        
         if amount <= 0:
             raise ValueError("Withdrawal amount must be positive")
         
@@ -212,7 +281,8 @@ class SavingsAccount(Account):
         self.transactions.append({
             "type": "transfer_out",
             "amount": amount,
-            "Available balance": self.get_balance()
+            "Available balance": self.get_balance(),
+            "time": current_time()
         })
         print(f"Withdrawal successful! Amount withdrawn: GH₵{amount}")
 
@@ -241,8 +311,11 @@ class CheckingAccount(Account):
         super().__init__(account_holder, balance)
         self.overdraft = overdraft
         self.type = "Checking account" # modify the account type
-        
-        self.overdraft_allowed = True # keeps track of ppl to give o.d.
+        # keep track of ppl to give o.d.
+        self.overdraft_allowed = True # False o.w.
+
+        # rewrite the account number format
+        self.account_number = "CHK-"+str(Account.next_account_number).zfill(10)
     
     def get_overdraft_status(self):
         """returns True if you qualify for overdraft,
@@ -256,11 +329,22 @@ class CheckingAccount(Account):
     def set_overdraft(self, value):
         """sets the overdraft qualification
         """
-        self.overdraft = value
+        # deny if account it frozen
+        self._ensure_active()
+        
+        # deny if o.d is not allowed to the user
+        if self.get_overdraft_status():
+            self.overdraft = value
+        else:
+            raise ValueError("Sorry! You are not allowed for an overdraft yet.")
+      
 
     def withdraw(self, amount):
         """Withdraw with overdraft support."""
 
+        # deny if account it frozen
+        self._ensure_active()
+        
         if amount <= 0:
             raise ValueError("Withdrawal amount must be positive.")
 
@@ -280,7 +364,8 @@ class CheckingAccount(Account):
                 "type": "transfer_out",
                 "amount": amount,
                 "Available balance": self.get_balance(),
-                "Remaining overdraft": self.overdraft
+                "Remaining overdraft": self.overdraft,
+                "time": current_time()
             })
 
             print(f"Withdrawal successful! Amount withdrawn: GH₵{amount}")
@@ -292,7 +377,12 @@ class CheckingAccount(Account):
             raise ValueError("Withdrawal denied! Exceeds overdraft + balance limit.")
         
     def reset_overdraft(self, limit=100):
-        """resets the overdraft, since Banks reset every month"""
+        """resets the overdraft, since Banks reset o.d every month"""
+        
+        # deny if account it frozen
+        self._ensure_active()
+        
+        # else pass it
         self.overdraft = limit
         print(f"Overdraft reset to GH₵{limit}")
         
@@ -322,6 +412,9 @@ class BusinessAccount(Account):
         self.business_id = business_id
         self.type = "Business Account"
 
+        # rewrite the account number format
+        self.account_number = "BUS-"+str(Account.next_account_number).zfill(10)
+
     def get_business_id(self):
         """returns the business id"""
         return self.business_id
@@ -334,6 +427,7 @@ class BusinessAccount(Account):
             f"Business ID: {self.get_business_id()}\n"
             f"Current Balance: GH₵{self.get_balance():,.2f}\n"
             f"Account Type: {self.type}\n"
+            f"Status: {self.get_status()}\n\n"
             f"=============================="
         )
 
@@ -375,5 +469,6 @@ def active_accounts(accounts):
             # append it to the actives list
             actives.append(acc)
     return actives
+
 
 
