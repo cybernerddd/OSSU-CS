@@ -8,7 +8,7 @@ Language: Racket
 
 - [x] Module Overview
 - [x] Expressions
-- [ ] Evaluation
+- [x] Evaluation
 - [ ] Strings and Images
 - [ ] Constant Definitions
 - [ ] Function Definitions
