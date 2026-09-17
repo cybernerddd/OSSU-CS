@@ -9,7 +9,7 @@ Language: Racket
 - [x] Module Overview
 - [x] Expressions
 - [x] Evaluation
-- [ ] Strings and Images
+- [x] Strings and Images
 - [ ] Constant Definitions
 - [ ] Function Definitions
 - [ ] Booleans and If Expressions
