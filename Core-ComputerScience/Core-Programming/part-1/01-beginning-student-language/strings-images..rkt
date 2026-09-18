@@ -55,3 +55,15 @@
         (circle 10 "solid" "red"))
         (text "NERDDD" 20 "black")))
         
+(overlay (rectangle 190 120 "outline" "red")
+         (above (text "CYBERNERDDD" 20 "red")
+                (text " "  10 "white")
+
+                (beside (circle 10 "solid" "red")
+                        (text " "  20 "white")
+                        (circle 10 "solid" "red")
+                        (text " "  20 "white")
+                        (circle 10 "solid" "red"))
+
+                (text " "  20 "white")
+                (text "SECURE" 10 "red")))
