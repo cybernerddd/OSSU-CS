@@ -67,3 +67,45 @@
 
                 (text " "  20 "white")
                 (text "SECURE" 10 "red")))
+
+;CYBERNERDDD LOGO
+(overlay 
+         (above (text "CYBERNERDDD" 20 "white")
+                ;space inbetween
+                (text " " 10 "black")
+
+                (beside (circle 10 "solid" "red")
+                        (text " " 10 "black")
+                        (circle 10 "solid" "blue")
+                        (text " " 10 "black")
+                        (circle 10 "solid" "green"))
+                (text " " 10 "black")
+
+                (beside (text "BUILD" 10 "white")
+                        (text " " 15 "black")
+                        (text "·" 15 "white")
+                        (text " " 15 "black")
+                        
+                        (text "BREAK" 10 "white")
+                        (text " " 15 "black")
+                        (text "·" 15 "white")
+                        (text " " 15 "black")
+                        
+                        (text "FIX" 10 "white")
+                        (text " " 15 "black")))
+         (rectangle 190 120 "solid" "black"))
+
+;
+;;; OSSU LOGO
+;
+
+(above (overlay (above (text "OSSU" 50 "white")
+                       (text "Open Source Society University" 13 "white"))
+              
+
+                (rectangle 220 170 "solid" "blue")
+                (rectangle 250 200 "solid" "black"))
+
+       (rectangle 40 30 "solid" "black")
+       (rectangle 140 10 "solid" "black"))
+       
