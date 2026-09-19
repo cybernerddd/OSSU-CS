@@ -10,7 +10,7 @@ Language: Racket
 - [x] Expressions
 - [x] Evaluation
 - [x] Strings and Images
-- [ ] Constant Definitions
+- [x] Constant Definitions
 - [ ] Function Definitions
 - [ ] Booleans and If Expressions
 - [ ] Using the Stepper
