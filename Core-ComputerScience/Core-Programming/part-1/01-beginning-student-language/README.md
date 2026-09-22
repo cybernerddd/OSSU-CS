@@ -11,7 +11,7 @@ Language: Racket
 - [x] Evaluation
 - [x] Strings and Images
 - [x] Constant Definitions
-- [ ] Function Definitions
+- [x] Function Definitions
 - [ ] Booleans and If Expressions
 - [ ] Using the Stepper
 - [ ] Discovering Primitives
