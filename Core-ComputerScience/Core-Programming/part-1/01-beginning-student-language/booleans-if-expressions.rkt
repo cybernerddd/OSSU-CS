@@ -16,3 +16,13 @@
 (< (image-width w1)
    (image-width w2))
 
+; if-statements
+(if (< (image-width w1)
+       (image-height w2))
+    "big"
+    "small")
+
+(and (= 1 1)
+     (> 31 4))
+
+(not (= 1 1))
