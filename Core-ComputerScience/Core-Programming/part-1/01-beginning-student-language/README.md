@@ -12,7 +12,7 @@ Language: Racket
 - [x] Strings and Images
 - [x] Constant Definitions
 - [x] Function Definitions
-- [ ] Booleans and If Expressions
+- [x] Booleans and If Expressions
 - [ ] Using the Stepper
 - [ ] Discovering Primitives
 - [ ] Practice Problems
