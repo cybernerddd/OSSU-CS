@@ -15,8 +15,8 @@ Language: Racket
 - [x] Booleans and If Expressions
 - [x] Using the Stepper
 - [x] Discovering Primitives
-- [ ] Practice Problems
-- [ ] Module Wrap-Up
+- [x] Practice Problems
+- [x] Module Wrap-Up
 
 ## What I'm Learning
 
