@@ -13,8 +13,8 @@ Language: Racket
 - [x] Constant Definitions
 - [x] Function Definitions
 - [x] Booleans and If Expressions
-- [ ] Using the Stepper
-- [ ] Discovering Primitives
+- [x] Using the Stepper
+- [x] Discovering Primitives
 - [ ] Practice Problems
 - [ ] Module Wrap-Up
 
