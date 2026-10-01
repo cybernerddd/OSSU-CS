@@ -7,7 +7,7 @@ Language: Racket
 ## Progress
 
 - [x] Module Overview
-- [ ] HtDF Recipe
+- [x] HtDF Recipe
 - [ ] Varying Recipe Order
 - [ ] Practice Problems
 - [ ] Module Wrap-Up
