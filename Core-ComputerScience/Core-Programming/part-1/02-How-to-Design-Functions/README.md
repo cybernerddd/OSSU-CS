@@ -8,7 +8,7 @@ Language: Racket
 
 - [x] Module Overview
 - [x] HtDF Recipe
-- [ ] Varying Recipe Order
+- [x] Varying Recipe Order
 - [ ] Practice Problems
 - [ ] Module Wrap-Up
 
