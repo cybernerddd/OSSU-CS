@@ -10,7 +10,7 @@ Language: Racket
 - [x] HtDF Recipe
 - [x] Varying Recipe Order
 - [x] Poorly Formed Problems
-- [ ] Practice Problems
+- [x] Practice Problems
 - [ ] Module Wrap-Up
 
 ## What I'm Learning
