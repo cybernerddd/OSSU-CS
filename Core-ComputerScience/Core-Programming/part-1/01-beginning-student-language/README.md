@@ -25,3 +25,6 @@ and functional programming using Racket.
 
 I'm documenting my exercises, experiments, and understanding
 as I progress through OSSU's Core Programming curriculum.
+
+---
+**Status:** ✅ Completed
