@@ -12,11 +12,11 @@ Language: Racket
 - [x] Poorly Formed Problems
 - [x] Practice Problems
 - [x] Module Quiz
-- [ ] Module Wrap-Up
+- [x] Module Wrap-Up
 
 ## What I'm Learning
 
-This course is my introduction to systematic programming
+This course is my introduction to systematic programming(How to Design Functions).
 
 I'm documenting my exercises, experiments, and understanding
 as I progress through OSSU's Core Programming curriculum.
