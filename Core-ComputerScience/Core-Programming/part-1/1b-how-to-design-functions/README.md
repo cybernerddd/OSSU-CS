@@ -1,32 +1,26 @@
-# 2. How to Design Data
+# Systematic Program Design - Part 1b
 
-**Course:** UBCx Systematic Program Design - Part 1 (SPD1x)  
-**Module:** 2 — How to Design Data  
-**Status:** 🟡 In Progress
+Course: Systematic Program Design [SPD1B](https://learning.edx.org/course/course-v1:UBCx+SPD1x+2T2015/home)
 
-This module focuses on designing data definitions and using the structure of data to guide program design.
+Language: Racket
 
----
-
-## Module Progress
+## Progress
 
 - [x] Module Overview
-- [ ] cond Expressions 
-- [ ] Data Definitions
-- [ ] Atomic Non-Distinct 
-- [ ] HtDF With Non-Primitive Data 
-- [ ] HtDF X Structure of Data Orthogonality
-- [ ] Interval 
-- [ ] Enumeration 
-- [ ] Itemization
-- [ ] HtDF with Interval 
-- [ ] HtDF with Enumeration 
-- [ ] HtDF with Itemization 
-- [ ] Structure of Information Flows Through 
-- [ ] Practice Problems
-- [ ] Quiz
-- [ ] Module Wrap-Up
+- [x] HtDF Recipe
+- [x] Varying Recipe Order
+- [x] Poorly Formed Problems
+- [x] Practice Problems
+- [x] Module Quiz
+- [x] Module Wrap-Up
 
+## What I'm Learning
+
+This course is my introduction to systematic programming(How to Design Functions).
+
+I'm documenting my exercises, experiments, and understanding
+as I progress through OSSU's Core Programming curriculum.
 
 ---
-**Status:** 🟡 In Progress
+---
+**Status:** ✅ Completed
