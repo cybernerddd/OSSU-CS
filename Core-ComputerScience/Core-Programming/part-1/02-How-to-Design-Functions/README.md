@@ -11,7 +11,7 @@ Language: Racket
 - [x] Varying Recipe Order
 - [x] Poorly Formed Problems
 - [x] Practice Problems
-- [ ] Module Quiz
+- [x] Module Quiz
 - [ ] Module Wrap-Up
 
 ## What I'm Learning
