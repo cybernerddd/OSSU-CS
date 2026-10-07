@@ -11,7 +11,7 @@ This module focuses on designing data definitions and using the structure of dat
 ## Module Progress
 
 - [x] Module Overview
-- [ ] cond Expressions 
+- [x] cond Expressions 
 - [ ] Data Definitions
 - [ ] Atomic Non-Distinct 
 - [ ] HtDF With Non-Primitive Data 
