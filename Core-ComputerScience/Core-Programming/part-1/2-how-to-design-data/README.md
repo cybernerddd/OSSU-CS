@@ -13,7 +13,7 @@ This module focuses on designing data definitions and using the structure of dat
 - [x] Module Overview
 - [x] cond Expressions 
 - [x] Data Definitions
-- [ ] Atomic Non-Distinct 
+- [x] Atomic Non-Distinct 
 - [ ] HtDF With Non-Primitive Data 
 - [ ] HtDF X Structure of Data Orthogonality
 - [ ] Interval 
