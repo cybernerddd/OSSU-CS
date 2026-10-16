@@ -17,7 +17,7 @@ This module focuses on designing data definitions and using the structure of dat
 - [x] HtDF With Non-Primitive Data 
 - [x] HtDF X Structure of Data Orthogonality
 - [x] Interval 
-- [ ] Enumeration 
+- [x] Enumeration 
 - [ ] Itemization
 - [ ] HtDF with Interval 
 - [ ] HtDF with Enumeration 
